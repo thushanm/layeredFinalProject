@@ -7,5 +7,5 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public interface GrnDeatilsDAO extends CrudDAO<GrnDetails,String>{
-    public boolean saveAll(ArrayList<GrnDetailsDTO> list) throws SQLException, ClassNotFoundException;
+    public boolean saveAll(ArrayList<GrnDetails> list) throws SQLException, ClassNotFoundException;
 }

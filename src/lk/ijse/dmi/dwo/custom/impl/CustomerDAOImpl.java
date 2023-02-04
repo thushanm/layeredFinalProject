@@ -3,13 +3,14 @@ package lk.ijse.dmi.dwo.custom.impl;
 import lk.ijse.dmi.dwo.custom.CrudDAO;
 import lk.ijse.dmi.dwo.custom.CrudUtil;
 import lk.ijse.dmi.dto.CustomerDTO;
+import lk.ijse.dmi.dwo.custom.CustomerDAO;
 import lk.ijse.dmi.entity.Customer;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class CustomerDAOImpl implements CrudDAO<Customer,String> {
+public class CustomerDAOImpl implements CustomerDAO {
     @Override
     public boolean save(Customer customer) throws SQLException, ClassNotFoundException {
         return CrudUtil.executeUpdate("INSERT INTO customer VALUES(?,?,?,?)",

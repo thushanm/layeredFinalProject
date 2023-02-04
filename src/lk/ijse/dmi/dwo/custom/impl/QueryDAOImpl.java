@@ -4,6 +4,7 @@ import lk.ijse.dmi.dwo.custom.CrudUtil;
 import lk.ijse.dmi.dwo.custom.QuaryDAO;
 import lk.ijse.dmi.dto.CustomOrderDTO;
 import lk.ijse.dmi.dto.GrnCustomDTO;
+import lk.ijse.dmi.entity.Custom;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,11 +14,11 @@ import java.util.ArrayList;
 
 public class QueryDAOImpl implements QuaryDAO {
 
-    public ArrayList<GrnCustomDTO> grnIdQuary(String gid) throws SQLException, ClassNotFoundException {
-        ArrayList<GrnCustomDTO> allData = new ArrayList<>();
+    public ArrayList<Custom> grnIdQuary(String gid) throws SQLException, ClassNotFoundException {
+        ArrayList<Custom> allData = new ArrayList<>();
        ResultSet rst =  CrudUtil.executeQuary("SELECT g.grnid,g.date,g.time,gd.discription,gd.qty,gd.utilPrice,gd.grndId,gd.grnitId FROM grn as g INNER JOIN grndetails as gd ON g.grnid=gd.grndid=?;",gid);
 while (rst.next()){
-    allData.add(new GrnCustomDTO((rst.getString("grnid")),LocalDate.parse(rst.getString("date")),LocalTime.parse(rst.getString("time")),rst.getString("discription"),rst.getInt("qty"),rst.getInt("utilPrice"),rst.getString("grnitId")));
+    allData.add(new Custom((rst.getString("grnid")),LocalDate.parse(rst.getString("date")),LocalTime.parse(rst.getString("time")),rst.getString("discription"),rst.getInt("qty"),rst.getInt("utilPrice"),rst.getString("grnitId")));
 }
 return allData;
     }

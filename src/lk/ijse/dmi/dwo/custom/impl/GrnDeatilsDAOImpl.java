@@ -44,14 +44,14 @@ public class GrnDeatilsDAOImpl implements GrnDeatilsDAO {
 
 
     @Override
-    public boolean saveAll(ArrayList<GrnDetailsDTO> list) throws SQLException, ClassNotFoundException {
+    public boolean saveAll(ArrayList<GrnDetails> list) throws SQLException, ClassNotFoundException {
         ItemDAOImpl itemDAO =new ItemDAOImpl();
         for (GrnDetails g : list) {
             boolean b = save(g);
             if(!b){
                 return false;
             }else{
-                boolean b1 = itemDAO.addQty(g.getItId(), g.getQty());
+                boolean b1 = itemDAO.addQty(g.getGrndid(), g.getQty());
                 if(!b1){
                     return false;
                 }

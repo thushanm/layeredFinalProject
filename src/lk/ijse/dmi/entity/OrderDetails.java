@@ -1,6 +1,6 @@
 package lk.ijse.dmi.entity;
 
-public class OrderDeatils {
+public class OrderDetails {
     private String description;
     private int discount;
     private int qty;
@@ -10,11 +10,11 @@ public class OrderDeatils {
     private String coId;
 
 
-    public OrderDeatils() {
+    public OrderDetails() {
     }
 
 
-    public OrderDeatils(String description, int discount, int qty, double price, String odId, String oitId, String coId) {
+    public OrderDetails(String description, int discount, int qty, double price, String odId, String oitId, String coId) {
         this.description = description;
         this.discount = discount;
         this.qty = qty;

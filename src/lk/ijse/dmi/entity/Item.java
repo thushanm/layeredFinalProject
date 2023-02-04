@@ -5,7 +5,7 @@ public class Item {
     private String itSId;
     private String description;
     private int qty;
-    private double discount;
+    private int discount;
     private double uPrice;
 
 
@@ -13,7 +13,7 @@ public class Item {
     }
 
 
-    public Item(String itId, String itSId, String description, int qty, double discount, double uPrice) {
+    public Item(String itId, String itSId, String description, int qty, int discount, double uPrice) {
         this.itId = itId;
         this.itSId = itSId;
         this.description = description;
@@ -54,11 +54,11 @@ public class Item {
         this.qty = qty;
     }
 
-    public double getDiscount() {
+    public int getDiscount() {
         return discount;
     }
 
-    public void setDiscount(double discount) {
+    public void setDiscount(int discount) {
         this.discount = discount;
     }
 
