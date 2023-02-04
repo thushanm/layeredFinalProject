@@ -16,10 +16,6 @@ public class ItemDTO {
     public ItemDTO() {
     }
 
-
-
-
-
     public ItemDTO(String itId, String itsId, String description, int qty, int discount, double unitPrice) {
         this.itId = itId;
         this.itsId = itsId;

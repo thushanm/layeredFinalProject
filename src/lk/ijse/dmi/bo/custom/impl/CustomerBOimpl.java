@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 
 public class CustomerBOimpl implements CustomerBO {
   CustomerDAO crudDAO = (CustomerDAOImpl) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOType.CUSTOMER);
-
+//THUSITHA
     public ArrayList<CustomerDTO> getAllCustomer() throws SQLException, ClassNotFoundException {
 
         return new ArrayList<CustomerDTO>(crudDAO.getAll().stream().map(c -> new CustomerDTO(
